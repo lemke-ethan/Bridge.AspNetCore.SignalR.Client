@@ -1,0 +1,18 @@
+{
+  // The folder to output JavaScript (.js) files.
+  "output": "$(OutDir)/bridge/",
+
+  // Delete everything from the output folder
+  // Default is false
+  "cleanOutputFolderBeforeBuild": true,
+
+  // Rules to manage generated JavaScript syntax.
+  // Default is "Managed"
+  "rules": {
+    "integer": "Managed",
+    "anonymousType": "Plain",
+    "arrayIndex": "Managed",
+    "boxing": "Managed",
+    "lambda": "Plain"
+  }
+}

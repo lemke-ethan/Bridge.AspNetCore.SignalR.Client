@@ -1,0 +1,34 @@
+{
+  // The folder to output JavaScript (.js) files.
+  "output": "$(OutDir)/bridge/",
+
+  // Set to true to disable Reflection metadata generation.
+  // Default is false.
+  "reflection": {
+    "disabled": true
+  },
+
+  // Delete everything from the output folder
+  // Default is false
+  "cleanOutputFolderBeforeBuild": true,
+
+  // Determines whether only formatted, only minified or both versions of the resulting .js files will be output. 
+  // Default is Both.
+  "outputFormatting": "Formatted",
+
+  // Automatically generate a index.html file and add the file to the output directory.
+  // Default is false.
+  "html": {
+    "disabled": true
+  },
+
+  // Rules to manage generated JavaScript syntax.
+  // Default is "Managed"
+  "rules": {
+    "integer": "Managed",
+    "anonymousType": "Plain",
+    "arrayIndex": "Managed",
+    "boxing": "Managed",
+    "lambda": "Plain"
+  }
+}
