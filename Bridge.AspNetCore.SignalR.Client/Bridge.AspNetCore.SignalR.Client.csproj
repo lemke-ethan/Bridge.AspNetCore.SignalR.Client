@@ -38,7 +38,6 @@
   <ItemGroup>
     <Compile Include="Enumerations\MessageType.cs" />
     <Compile Include="Enumerations\ProtocolType.cs" />
-    <Compile Include="Enumerations\TransferMode.cs" />
     <Compile Include="Enumerations\TransportType.cs" />
     <Compile Include="Interfaces\HubMessage.cs" />
     <Compile Include="Interfaces\IHttpClient.cs" />
@@ -50,9 +49,6 @@
     <Compile Include="Interfaces\Observer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HubConnection.cs" />
-    <Compile Include="Logging\NullLogger.cs" />
-    <Compile Include="Logging\ConsoleLogger.cs" />
-    <Compile Include="Enumerations\LogLevel.cs" />
     <Compile Include="Threading\Promise.cs" />
   </ItemGroup>
   <ItemGroup>
