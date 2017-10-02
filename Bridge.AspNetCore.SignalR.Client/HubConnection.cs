@@ -1,4 +1,6 @@
 ﻿using Bridge.AspNetCore.SignalR.Client.Interfaces;
+using Bridge.AspNetCore.SignalR.Client.Threading;
+using System;
 
 namespace Bridge.AspNetCore.SignalR.Client
 {
@@ -31,7 +33,15 @@ namespace Bridge.AspNetCore.SignalR.Client
         #region Public Methods
 
         /// <summary>
-        /// Close the hub connection
+        /// Start the hub connection
+        /// </summary>
+        public Promise Start()
+        {
+            return default(Promise);
+        }
+
+        /// <summary>
+        /// Stop the hub connection
         /// </summary>
         public void Stop() { }
 
@@ -46,6 +56,26 @@ namespace Bridge.AspNetCore.SignalR.Client
         {
             return default(Observable<T>);
         }
+        
+        public Promise Send(string methodName, object[] args)
+        {
+            return default(Promise);
+        }
+        
+        public Promise<object> Invoke(string methodName, object[] args)
+        {
+            return default(Promise<object>);
+        }
+
+        public void On(string methodName, Action<object[]> method) { }
+
+        public void Off(string methodName, Action<object[]> method) { }
+
+        /// <summary>
+        /// Registers an event handler to the hub connection is closed event
+        /// </summary>
+        /// <param name="callback">Action to invoke</param>
+        public void OnClose(Action<Error> callback) { }
 
         #endregion
     }
