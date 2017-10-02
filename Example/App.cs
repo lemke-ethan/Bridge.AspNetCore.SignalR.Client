@@ -17,6 +17,9 @@ namespace Example
             // Connect to a hub
             var hubConnection = new HubConnection("/test");
 
+            var dataStream = hubConnection.Stream<int>("foo", new object[] { 2, 4, "cat" });
+
+            hubConnection.Stop();
         }
      
         #endregion

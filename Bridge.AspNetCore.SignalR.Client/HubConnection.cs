@@ -7,6 +7,7 @@ namespace Bridge.AspNetCore.SignalR.Client
     /// </summary>
     [External]
     [Namespace("signalR")]
+    [Convention(Target = ConventionTarget.Member, Notation = Notation.LowerCamelCase)]
     public class HubConnection
     {
         #region Constructor
@@ -24,6 +25,27 @@ namespace Bridge.AspNetCore.SignalR.Client
         /// <param name="url">A hub connection</param>
         /// <param name="options">The connection options</param>
         public HubConnection(IConnection url, IHubConnectionOptions options = null) { }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Close the hub connection
+        /// </summary>
+        public void Stop() { }
+
+        /// <summary>
+        /// Stream data of type <see cref="T"/>
+        /// </summary>
+        /// <typeparam name="T">The type of data to be streamed</typeparam>
+        /// <param name="methodName">The method name</param>
+        /// <param name="args">The method arguments</param>
+        /// <returns>An observable object instance</returns>
+        public Observable<T> Stream<T>(string methodName, object[] args)
+        {
+            return default(Observable<T>);
+        }
 
         #endregion
     }
