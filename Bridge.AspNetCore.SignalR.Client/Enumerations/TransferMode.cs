@@ -4,6 +4,7 @@
     /// The type of transfer mode
     /// </summary>
     [External]
+    [Namespace("signalR")]
     public enum TransferMode
     {
         /// <summary>
