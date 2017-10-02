@@ -1,11 +1,10 @@
-using Bridge;
-
-namespace signalR
+namespace Bridge.AspNetCore.SignalR.Client
 {
     /// <summary>
     /// Logger that is used when the logger or log level is null
     /// </summary>
     [External]
+    [Namespace("signalR")]
     [Convention(Target = ConventionTarget.Member, Notation = Notation.LowerCamelCase)]
     public class NullLogger 
     {

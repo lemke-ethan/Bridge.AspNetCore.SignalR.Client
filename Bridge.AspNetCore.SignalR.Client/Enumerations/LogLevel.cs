@@ -1,11 +1,10 @@
-using Bridge;
-
-namespace signalR
+namespace Bridge.AspNetCore.SignalR.Client
 {
     /// <summary>
     /// The level of logging
     /// </summary>
     [External]
+    [Namespace("signalR")]
     public enum LogLevel
     {
         /// <summary>
