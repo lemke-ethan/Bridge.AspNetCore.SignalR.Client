@@ -49,6 +49,7 @@
     <Compile Include="Interfaces\IHubProtocol.cs" />
     <Compile Include="Interfaces\Observable.cs" />
     <Compile Include="Interfaces\Observer.cs" />
+    <Compile Include="JsonHubProtocol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HubConnection.cs" />
     <Compile Include="Logging\NullLogger.cs" />
