@@ -34,8 +34,45 @@ namespace Example
 
             // Stop the connection
             hubConnection.Stop();
+
+            // Create an HTTP connection
+            var httpConnection = new HttpConnection("/foo")
+            {
+                // Setup the close event handler
+                mOnClose = (data) =>
+                {
+                    Console.WriteLine(data);
+                },
+
+                // Setup the data received event handler
+                mOnReceive = HttpConnection_OnReceive
+            };
+
+            // Start the connection
+            httpConnection.Start().Then(new Action(() => 
+            {
+                // Get the features
+                var features = httpConnection.mFeatures;
+
+                // Send a message
+                httpConnection.Send("hello").Then(new Action(() => 
+                {
+                    // Stop the connection
+                    httpConnection.Stop();
+                }));
+            }));
         }
-     
+
+        /// <summary>
+        /// On data received handler
+        /// </summary>
+        /// <param name="arg">The data that has been received</param>
+        private static void HttpConnection_OnReceive(object arg)
+        {
+            // Log the data
+            Console.WriteLine(arg);
+        }
+
         #endregion
     }
 }
