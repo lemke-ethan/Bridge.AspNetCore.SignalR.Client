@@ -1,5 +1,5 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using Bridge.AspNetCore.SignalR.Client.Threading;
+using System;
 
 namespace Bridge.AspNetCore.SignalR.Client
 {
@@ -15,13 +15,13 @@ namespace Bridge.AspNetCore.SignalR.Client
         /// <summary>
         /// Start the connection
         /// </summary>
-        IPromise Start();
+        Promise Start();
 
         /// <summary>
         /// Send data over the connection
         /// </summary>
         /// <param name="data">The data to be sent</param>
-        IPromise Send(object data);
+        Promise Send(object data);
 
         /// <summary>
         /// Stop the connection

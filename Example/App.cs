@@ -1,4 +1,5 @@
 ﻿using Bridge.AspNetCore.SignalR.Client;
+using System;
 
 namespace Example
 {
@@ -17,6 +18,22 @@ namespace Example
             // Connect to a hub
             var hubConnection = new HubConnection("/test");
 
+            // Setup on data received event handler
+            hubConnection.On("Send", (data) => 
+            {
+                // Log the received data to the console
+                Console.WriteLine(data);
+            });
+
+            // Start the connection
+            hubConnection.Start().Then(new Action(() =>
+            {
+                // Send a message
+                hubConnection.Invoke("send", new object[] { "Hello" });
+            }));
+
+            // Stop the connection
+            hubConnection.Stop();
         }
      
         #endregion
