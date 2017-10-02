@@ -40,6 +40,7 @@
     <Compile Include="Enumerations\ProtocolType.cs" />
     <Compile Include="Enumerations\TransferMode.cs" />
     <Compile Include="Enumerations\TransportType.cs" />
+    <Compile Include="HttpConnection.cs" />
     <Compile Include="Interfaces\HubMessage.cs" />
     <Compile Include="Interfaces\IHttpClient.cs" />
     <Compile Include="Interfaces\IConnection.cs" />
