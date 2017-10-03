@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26923.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridge.AspNetCore.SignalR.Client", "Bridge.AspNetCore.SignalR.Client\Bridge.AspNetCore.SignalR.Client.csproj", "{DE918BC7-203C-4899-96C9-323CC7E4B9E6}"
 EndProject
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE694A40-2E34-495F-9494-9856116FF673}
 	EndGlobalSection
 EndGlobal
