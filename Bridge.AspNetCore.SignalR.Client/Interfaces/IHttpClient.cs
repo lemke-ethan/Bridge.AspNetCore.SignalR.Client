@@ -15,7 +15,7 @@ namespace Bridge.AspNetCore.SignalR.Client
         /// <param name="url">The target URL</param>
         /// <param name="headers">Headers to be added to the request</param>
         /// <returns>The response</returns>
-        Promise<string> Get(string url, Dictionary<string, string> headers = null);
+        IPromise<string> Get(string url, Dictionary<string, string> headers = null);
 
         /// <summary>
         /// Performs a HTTP OPTIONS request
@@ -23,7 +23,7 @@ namespace Bridge.AspNetCore.SignalR.Client
         /// <param name="url">The target URL</param>
         /// <param name="headers">Headers to be added to the request</param>
         /// <returns>The response</returns>
-        Promise<string> Options(string url, Dictionary<string, string> headers = null);
+        IPromise<string> Options(string url, Dictionary<string, string> headers = null);
 
         /// <summary>
         /// Performs a HTTP POST request
@@ -31,7 +31,7 @@ namespace Bridge.AspNetCore.SignalR.Client
         /// <param name="url">The target URL</param>
         /// <param name="headers">Headers to be added to the request</param>
         /// <returns>The response</returns>
-        Promise<string> Post(string url, Dictionary<string, string> headers = null);
+        IPromise<string> Post(string url, Dictionary<string, string> headers = null);
 
         #endregion
     }

@@ -1,7 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using Bridge.AspNetCore.SignalR.Client.Threading;
+using System;
 
-namespace Bridge.AspNetCore.SignalR.Client
+namespace Bridge.AspNetCore.SignalR.Client.Interfaces
 {
     /// <summary>
     /// Methods and events used on a connection

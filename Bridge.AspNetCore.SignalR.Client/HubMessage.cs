@@ -1,25 +1,27 @@
 ﻿using Bridge.AspNetCore.SignalR.Client.Enumerations;
 
-namespace Bridge.AspNetCore.SignalR.Client.Interfaces
+namespace Bridge.AspNetCore.SignalR.Client
 {
     /// <summary>
     /// Hub message model
     /// </summary>
     [External]
+    [Namespace(false)]
+    [ObjectLiteral]
     [Convention(Target = ConventionTarget.Member, Notation = Notation.LowerCamelCase)]
-    public interface HubMessage
+    public class HubMessage
     {
         #region Public Methods
 
         /// <summary>
         /// The type of message
         /// </summary>
-        MessageType Type { get; }
+        public MessageType Type { get; set; }
 
         /// <summary>
         /// The ID of the invocation
         /// </summary>
-        string InvocationId { get; }
+        public string InvocationId { get; set; }
 
         #endregion
     }
