@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.0.0</version>
+    <title>An ASP.Net Core SignalR Bridge.Net definition library.</title>
+    <authors>Ethan Lemke</authors>
+    <owners>Ethan Lemke</owners>
+    <licenseUrl>https://github.com/lemke-ethan/Bridge.AspNetCore.SignalR.Client/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/lemke-ethan/Bridge.AspNetCore.SignalR.Client</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>A Bridge.Net definition library for the ASP.Net Core SignalR JavaScript client.</description>
+    <copyright>$copyright$</copyright>
+    <tags>Bridge.Net C# SignalR Bridge JavaScript</tags>
+  </metadata>
+</package>

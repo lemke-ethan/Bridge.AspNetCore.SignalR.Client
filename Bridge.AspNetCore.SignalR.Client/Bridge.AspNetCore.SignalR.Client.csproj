@@ -59,6 +59,7 @@
     <Compile Include="Threading\IPromiseLike.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Bridge.AspNetCore.SignalR.Client.nuspec" />
     <None Include="bridge.json" />
     <None Include="packages.config" />
   </ItemGroup>
