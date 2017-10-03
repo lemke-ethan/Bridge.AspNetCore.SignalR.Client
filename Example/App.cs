@@ -1,4 +1,5 @@
 ﻿using Bridge.AspNetCore.SignalR.Client;
+using Bridge.AspNetCore.SignalR.Client.Enumerations;
 using System;
 
 namespace Example
@@ -15,11 +16,25 @@ namespace Example
         /// </summary>
         public static void Main()
         {
+            HubConnectionExample();
+            HttpConnectionExample();
+            JsonHubProtocolExample();
+        }
+
+        #endregion
+
+        #region Private Static Methods
+
+        /// <summary>
+        /// <see cref="HubConnection"/> examples
+        /// </summary>
+        private static void HubConnectionExample()
+        {
             // Connect to a hub
             var hubConnection = new HubConnection("/test");
 
             // Setup on data received event handler
-            hubConnection.On("Send", (data) => 
+            hubConnection.On("Send", (data) =>
             {
                 // Log the received data to the console
                 Console.WriteLine(data);
@@ -34,7 +49,13 @@ namespace Example
 
             // Stop the connection
             hubConnection.Stop();
+        }
 
+        /// <summary>
+        /// <see cref="HttpConnection"/> examples
+        /// </summary>
+        private static void HttpConnectionExample()
+        {
             // Create an HTTP connection
             var httpConnection = new HttpConnection("/foo")
             {
@@ -49,18 +70,46 @@ namespace Example
             };
 
             // Start the connection
-            httpConnection.Start().Then(new Action(() => 
+            httpConnection.Start().Then(new Action(() =>
             {
                 // Get the features
                 var features = httpConnection.mFeatures;
 
                 // Send a message
-                httpConnection.Send("hello").Then(new Action(() => 
+                httpConnection.Send("hello").Then(new Action(() =>
                 {
                     // Stop the connection
                     httpConnection.Stop();
                 }));
             }));
+        }
+
+        /// <summary>
+        /// <see cref="JsonHubProtocol"/> examples
+        /// </summary>
+        private static void JsonHubProtocolExample()
+        {
+            // Create a new JSON hub
+            var jsonHub = new JsonHubProtocol();
+
+            // Get the hub's protocol name
+            var protocolName = jsonHub.Name;
+            
+            // Get the hub's protocol type
+            var protocolType = jsonHub.Type;
+
+            // Create a new hub message
+            var hubMessage = new HubMessage
+            {
+                InvocationId = "34lknl23k",
+                Type = (MessageType)1
+            };
+
+            // Write a message
+            var message = jsonHub.WriteMessage(hubMessage);
+
+            // Parse a message
+            var parsedMessage = jsonHub.ParseMessages(message);
         }
 
         /// <summary>
