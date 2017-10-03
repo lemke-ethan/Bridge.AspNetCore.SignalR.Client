@@ -41,11 +41,13 @@ namespace Example
             });
 
             // Start the connection
-            hubConnection.Start().Then(new Action(() =>
-            {
-                // Send a message
-                hubConnection.Invoke("send", new object[] { "Hello" });
-            }));
+            hubConnection.Start().Then(
+                onfulfilled: () =>
+                {
+                    // Send a message
+                    hubConnection.Invoke("send", new object[] { "Hello" });
+                }, 
+                onrejected: null);
 
             // Stop the connection
             hubConnection.Stop();
@@ -70,18 +72,22 @@ namespace Example
             };
 
             // Start the connection
-            httpConnection.Start().Then(new Action(() =>
-            {
-                // Get the features
-                var features = httpConnection.mFeatures;
-
-                // Send a message
-                httpConnection.Send("hello").Then(new Action(() =>
+            httpConnection.Start().Then(
+                onfulfilled: () =>
                 {
-                    // Stop the connection
-                    httpConnection.Stop();
-                }));
-            }));
+                    // Get the features
+                    var features = httpConnection.mFeatures;
+
+                    // Send a message
+                    httpConnection.Send("hello").Then(
+                        onfulfilled: () =>
+                        {
+                            // Stop the connection
+                            httpConnection.Stop();
+                        },
+                        onrejected: null);
+                },
+                onrejected: null);
         }
 
         /// <summary>

@@ -15,13 +15,13 @@ namespace Bridge.AspNetCore.SignalR.Client.Interfaces
         /// <summary>
         /// Start the connection
         /// </summary>
-        Promise Start();
+        IPromise Start();
 
         /// <summary>
         /// Send data over the connection
         /// </summary>
         /// <param name="data">The data to be sent</param>
-        Promise Send(object data);
+        IPromise Send(object data);
 
         /// <summary>
         /// Stop the connection

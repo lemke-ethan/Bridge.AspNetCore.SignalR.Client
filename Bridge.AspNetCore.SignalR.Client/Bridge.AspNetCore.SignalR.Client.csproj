@@ -55,7 +55,8 @@
     <Compile Include="Logging\NullLogger.cs" />
     <Compile Include="Logging\ConsoleLogger.cs" />
     <Compile Include="Enumerations\LogLevel.cs" />
-    <Compile Include="Threading\Promise.cs" />
+    <Compile Include="Threading\IPromise.cs" />
+    <Compile Include="Threading\IPromiseLike.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bridge.json" />

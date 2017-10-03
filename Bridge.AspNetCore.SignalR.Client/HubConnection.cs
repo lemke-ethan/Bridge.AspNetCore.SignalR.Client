@@ -35,9 +35,9 @@ namespace Bridge.AspNetCore.SignalR.Client
         /// <summary>
         /// Start the hub connection
         /// </summary>
-        public Promise Start()
+        public IPromise Start()
         {
-            return default(Promise);
+            return default(IPromise);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Bridge.AspNetCore.SignalR.Client
         public void Stop() { }
 
         /// <summary>
-        /// Stream data of type <see cref="T"/>
+        /// Stream data of type <see cref="T"/> to the server side method
         /// </summary>
         /// <typeparam name="T">The type of data to be streamed</typeparam>
         /// <param name="methodName">The method name</param>
@@ -57,16 +57,32 @@ namespace Bridge.AspNetCore.SignalR.Client
             return default(Observable<T>);
         }
         
-        public Promise Send(string methodName, object[] args)
+        /// <summary>
+        /// Call a server side method with the specified arguments
+        /// </summary>
+        /// <param name="methodName">The name of the method</param>
+        /// <param name="args">The arguments to be passed to the method</param>
+        public IPromise Send(string methodName, object[] args)
         {
-            return default(Promise);
+            return default(IPromise);
         }
         
-        public Promise<object> Invoke(string methodName, object[] args)
+        /// <summary>
+        /// Invoke a server side method with the specified arguments
+        /// </summary>
+        /// <param name="methodName">The name of the method</param>
+        /// <param name="args">The arguments to be passed to the method</param>
+        /// <returns>The method result</returns>
+        public IPromise<object> Invoke(string methodName, object[] args)
         {
-            return default(Promise<object>);
+            return default(IPromise<object>);
         }
 
+        /// <summary>
+        /// Define a client method 
+        /// </summary>
+        /// <param name="methodName">The name of the method</param>
+        /// <param name="method">The method signature and body</param>
         public void On(string methodName, Action<object[]> method) { }
 
         public void Off(string methodName, Action<object[]> method) { }

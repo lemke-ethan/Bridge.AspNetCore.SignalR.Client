@@ -50,26 +50,26 @@ namespace Bridge.AspNetCore.SignalR.Client
         /// <summary>
         /// Start the HTTP connection
         /// </summary>
-        public Promise Start()
+        public IPromise Start()
         {
-            return default(Promise);
+            return default(IPromise);
         }
 
         /// <summary>
         /// Send data to the client
         /// </summary>
         /// <param name="data">The data to be sent</param>
-        public Promise Send(object data)
+        public IPromise Send(object data)
         {
-            return default(Promise);
+            return default(IPromise);
         }
 
         /// <summary>
         /// Stop the HTTP connection
         /// </summary>
-        public Promise Stop()
+        public IPromise Stop()
         {
-            return default(Promise);
+            return default(IPromise);
         }
 
         #endregion
