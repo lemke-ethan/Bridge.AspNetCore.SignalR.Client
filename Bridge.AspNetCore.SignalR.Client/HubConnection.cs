@@ -52,7 +52,7 @@ namespace Bridge.AspNetCore.SignalR.Client
         /// <param name="methodName">The method name</param>
         /// <param name="args">The method arguments</param>
         /// <returns>An observable object instance</returns>
-        public Observable<T> Stream<T>(string methodName, object[] args)
+        public Observable<T> Stream<T>(string methodName, params object[] args)
         {
             return default(Observable<T>);
         }
@@ -62,30 +62,30 @@ namespace Bridge.AspNetCore.SignalR.Client
         /// </summary>
         /// <param name="methodName">The name of the method</param>
         /// <param name="args">The arguments to be passed to the method</param>
-        public IPromise Send(string methodName, object[] args)
+        public IPromise Send(string methodName, params object[] args)
         {
             return default(IPromise);
         }
-        
+
         /// <summary>
         /// Invoke a server side method with the specified arguments
         /// </summary>
         /// <param name="methodName">The name of the method</param>
         /// <param name="args">The arguments to be passed to the method</param>
         /// <returns>The method result</returns>
-        public IPromise<object> Invoke(string methodName, object[] args)
+        public IPromise<object> Invoke(string methodName, params object[] args)
         {
             return default(IPromise<object>);
         }
 
         /// <summary>
-        /// Define a client method 
+        /// Bind a delegate to the method name
         /// </summary>
         /// <param name="methodName">The name of the method</param>
         /// <param name="method">The method signature and body</param>
-        public void On(string methodName, Action<object[]> method) { }
+        public void On(string methodName, Delegate method) { }
 
-        public void Off(string methodName, Action<object[]> method) { }
+        public void Off(string methodName, Delegate method) { }
 
         /// <summary>
         /// Registers an event handler to the hub connection is closed event
