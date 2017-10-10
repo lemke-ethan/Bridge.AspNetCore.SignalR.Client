@@ -9,7 +9,7 @@ namespace Bridge.AspNetCore.SignalR.Client
     /// </summary>
     [External]
     [Namespace("signalR")]
-    [Convention(Target = ConventionTarget.Member, Notation = Notation.LowerCamelCase)]
+    [Convention(Target = ConventionTarget.Member, Notation = Notation.LowerCase)]
     public class HubConnection
     {
         #region Constructor
@@ -79,12 +79,17 @@ namespace Bridge.AspNetCore.SignalR.Client
         }
 
         /// <summary>
-        /// Bind a delegate to the method name
+        /// Add a delegate binding
         /// </summary>
         /// <param name="methodName">The name of the method</param>
         /// <param name="method">The method signature and body</param>
         public void On(string methodName, Delegate method) { }
 
+        /// <summary>
+        /// Remove a delegate binding 
+        /// </summary>
+        /// <param name="methodName">The name of the method</param>
+        /// <param name="method">The method delegate</param>
         public void Off(string methodName, Delegate method) { }
 
         /// <summary>
