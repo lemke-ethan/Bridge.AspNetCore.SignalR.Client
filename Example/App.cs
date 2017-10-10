@@ -34,10 +34,17 @@ namespace Example
             var hubConnection = new HubConnection("/test");
 
             // Setup on data received event handler
-            hubConnection.On("Send", (data) =>
+            hubConnection.On("Send", new Action<string>((data) =>
             {
                 // Log the received data to the console
                 Console.WriteLine(data);
+            }));
+
+            // Setup on connection close handler
+            hubConnection.OnClose((error) => 
+            {
+                // Log the error
+                Console.WriteLine(error.Message);
             });
 
             // Start the connection
@@ -45,7 +52,7 @@ namespace Example
                 onfulfilled: () =>
                 {
                     // Send a message
-                    hubConnection.Invoke("send", new object[] { "Hello" });
+                    hubConnection.Invoke("send", "Hello");
                 }, 
                 onrejected: null);
 
