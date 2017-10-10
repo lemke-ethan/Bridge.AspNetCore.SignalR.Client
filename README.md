@@ -1,7 +1,7 @@
 # Bridge.Net  ASP.Net Core SignalR Client
-Bridge.Net ASP.Net Core SignalR client is a [Bridge.Net](http://bridge.net/) definition library for the [ASP.Net Core SignalR client](https://github.com/aspnet/SignalR/tree/dev/client-ts). ;)
+Bridge.Net ASP.Net Core SignalR client is a [Bridge.Net](http://bridge.net/) definition library for the [ASP.Net Core SignalR client](https://www.npmjs.com/package/@aspnet/signalr-client). ;)
 
-Version +1.0.0 targets SignalR client 1.0.0-alpha1-final.
+Version +1.0.0 targets SignalR client 1.0.0-alpha2-final.
 
 ## Getting Started
 
